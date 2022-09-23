@@ -9,7 +9,7 @@
           <HomeHeader />
         </el-header>
         <el-main>
-          <Main />
+          <router-view />
         </el-main>
       </el-container>
     </el-container>
@@ -17,7 +17,8 @@
 </template>
 
 <script lang='ts' setup>
-import Main from './Main.vue'
+import HomeAside from './components/HomeAside.vue'
+import HomeHeader from './components/HomeHeader.vue'
 </script>
 
 <style scoped lang='less'>

@@ -26,6 +26,7 @@
 import { LoginFormData } from '@/types/login'
 import type { FormInstance } from 'element-plus'
 import { login } from '@/axios/api'
+const route = useRoute()
 const router = useRouter()
 const formData = reactive<LoginFormData>({
   username: 'admin',
@@ -67,8 +68,8 @@ const submitForm = (formEl: FormInstance | undefined) => {
       let formdata = formData
       try {
         let { data } = await login(formdata)
-        localStorage.setItem('token', data?.token)
-        router.replace('/')
+        localStorage.setItem('token', data.token)
+        router.replace(route.query.key as string || '/')
       }
       catch (error) {
         console.log(error)
