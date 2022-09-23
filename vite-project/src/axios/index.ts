@@ -22,20 +22,18 @@ service.interceptors.request.use(
 //响应拦截
 service.interceptors.response.use(
   res => {
-    console.log(res);
-    const code: number = res.status
+    const code: number = res.data.code
     if (code != 200) {
       return Promise.reject(res.data)
     }
     return res.data
   },
   err => {
-    console.log(err);
+    // console.log(err);
     const code: number = err.response.status
     if(code === 999){
-      router.push('./')
+      router.replace('/login')
     }
     return Promise.reject(err.response)
   })
-
 export default service

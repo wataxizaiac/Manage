@@ -4,9 +4,8 @@ import {LoginFormData} from "@/types/login";
 // 登录接口
 export function login(data: LoginFormData) {
     return service({
-        url: "/login",
-        method: "GET",
-        data
+        url: `/login?username=${data.username}&password=${data.password}`,
+        method: "GET"
     })
 }
 
