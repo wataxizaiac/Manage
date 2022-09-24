@@ -1,8 +1,8 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
+// import Icons from 'unplugin-icons/vite'
+// import IconsResolver from 'unplugin-icons/resolver'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
@@ -28,11 +28,11 @@ export default defineConfig({
       resolvers: [
         ElementPlusResolver(),
 
-        // Auto import icon components
-        // 自动导入图标组件
-        IconsResolver({
-          prefix: 'Icon',
-        }),
+        // // Auto import icon components
+        // // 自动导入图标组件  Bug：动态引入失效
+        // IconsResolver({
+        //   prefix: 'Icon',
+        // }),
       ],
 
       dts: resolve(pathSrc, 'auto-imports.d.ts'),
@@ -41,10 +41,10 @@ export default defineConfig({
     Components({
       resolvers: [
         // Auto register icon components
-        // 自动注册图标组件
-        IconsResolver({
-          enabledCollections: ['ep'],
-        }),
+        // 自动注册图标组件 Bug：动态引入失效
+        // IconsResolver({
+        //   enabledCollections: ['ep'],
+        // }),
         // Auto register Element Plus components
         // 自动导入 Element Plus 组件
         ElementPlusResolver(),
@@ -53,9 +53,9 @@ export default defineConfig({
       dts: resolve(pathSrc, 'components.d.ts'),
     }),
 
-    Icons({
-      autoInstall: true,
-    }),
+    // Icons({
+    //   autoInstall: true,
+    // }),
 
     Inspect(),
 

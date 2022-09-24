@@ -9,17 +9,26 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     component: Home,
     redirect:'/main',
-    meta: { requiresAuth: true },
     children: [
       {
         path: '/main',
         component: Main,
-        meta: { requiresAuth: true }
+        meta: { 
+          requiresAuth: true,
+          isShow: true,
+          title: '角色列表',
+          icon:'More'
+        }
       },
       {
         path: '/main2',
         component: Main2,
-        meta: { requiresAuth: true }
+        meta: { 
+          requiresAuth: true,
+          isShow: true,
+          title: '个人中心',
+          icon:'Avatar'
+        }
       }
     ]
   },

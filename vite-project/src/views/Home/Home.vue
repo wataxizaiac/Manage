@@ -1,5 +1,5 @@
 <template>
-  <div class='common-layout'>
+  <div class='home'>
     <el-container>
       <el-aside width='200px'>
         <HomeAside />
@@ -22,5 +22,14 @@ import HomeHeader from './components/HomeHeader.vue'
 </script>
 
 <style scoped lang='less'>
+.home {
+  height: 100%;
+  &:deep(.el-header) {
+    background: #333333;
+  }
 
+  &:deep(.el-container) {
+    height: 100%;
+  }
+}
 </style>
