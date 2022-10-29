@@ -74,7 +74,8 @@ const submitForm = (formEl: FormInstance | undefined) => {
       catch (error) {
         console.log(error)
       }
-    } else {
+    } 
+    else {
       console.log('error submit!')
       return false
     }

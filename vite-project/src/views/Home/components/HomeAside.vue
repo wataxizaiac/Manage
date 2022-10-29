@@ -5,7 +5,7 @@
       class='el-menu-vertical-demo'
     >
       <el-menu-item v-for='item in list' :key='item.path' :index='item.path'>
-        <component :is='item.meta.icon'></component>
+        <component :is='item.meta.icon' class='icons'></component>
         <span>{{ item.meta.title }}</span>
       </el-menu-item>
     </el-menu>
@@ -21,5 +21,10 @@ console.log(list)
 <style scoped lang='less'>
 &:deep(.el-menu-item){
   justify-content: center;
+  .icons{
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+  }
 }
 </style>

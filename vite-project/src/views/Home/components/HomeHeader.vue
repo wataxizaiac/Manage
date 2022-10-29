@@ -18,7 +18,9 @@
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item>个人中心</el-dropdown-item>
-            <el-dropdown-item>退出</el-dropdown-item>
+            <el-dropdown-item @click='LogOut()'>
+              退出
+            </el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -26,14 +28,13 @@
   </div>
 </template>
 <script lang='ts' setup>
+const router = useRouter()
 let src = 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'
 const errsrc = new URL('/src/assets/bg.jpg',import.meta.url).href
-
-// const errorHandler = () => {
-//   console.log(1111)
-//   return false
-  
-// }
+let LogOut = () => {
+  localStorage.removeItem('token')
+  router.replace('/login')
+}
 </script>
 
 <style scoped lang='less'>

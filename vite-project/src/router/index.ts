@@ -46,11 +46,8 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   // 获取登陆状态
-  console.log(from)
   const isToken = localStorage.getItem('token')
   if (to.path === '/login') { // 如果是登录页，则跳过验证
-    console.log(from.fullPath)
-    
     isToken ? next({ path: from.fullPath }) : next() // 必不可少
     return // 以下的代码不执行
   }

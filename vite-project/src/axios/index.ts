@@ -24,7 +24,9 @@ service.interceptors.response.use(
   res => {
     const { code } = res.data
     if (code != 200) {
-      return Promise.reject(res.data)
+      const { data } = res
+      console.log(data)
+      return Promise.reject(data)
     }
     return res.data
   },
