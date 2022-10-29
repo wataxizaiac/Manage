@@ -26,6 +26,10 @@ service.interceptors.response.use(
     if (code != 200) {
       const { data } = res
       console.log(data)
+      ElMessage({
+        type: 'error',
+        message: data.msg 
+      })
       return Promise.reject(data)
     }
     return res.data

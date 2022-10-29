@@ -32,8 +32,20 @@ const router = useRouter()
 let src = 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'
 const errsrc = new URL('/src/assets/bg.jpg',import.meta.url).href
 let LogOut = () => {
-  localStorage.removeItem('token')
-  router.replace('/login')
+  ElMessageBox.confirm('确定退出登录吗？', '退出登录', {
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    type: 'warning'
+  })
+    .then(() => {
+      localStorage.removeItem('token')
+      router.replace('/login')
+      ElMessage({
+        type: 'success',
+        message: '退出登录成功！'
+      })
+    })
+  
 }
 </script>
 

@@ -65,14 +65,18 @@ const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return
   formEl.validate(async valid => {
     if (valid) {
-      let formdata = formData
       try {
-        let { data } = await login(formdata)
+        const { data } = await login(formData)
+        ElNotification({
+          message: '欢迎登录',
+          type: 'success',
+          duration: 3000
+        })
+
         localStorage.setItem('token', data.token)
         router.replace(route.query.key as string || '/')
       }
-      catch (error) {
-        console.log(error)
+      catch (error) { 
       }
     } 
     else {

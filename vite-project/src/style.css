@@ -1,4 +1,5 @@
 *{
+	/* user-select:none; 禁止复制去除光标 */
 	margin: 0;
 	padding: 0;
 }
