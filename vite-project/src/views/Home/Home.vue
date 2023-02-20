@@ -21,14 +21,19 @@ import HomeAside from './components/HomeAside.vue'
 import HomeHeader from './components/HomeHeader.vue'
 </script>
 
-<style scoped lang='less'>
+<style scoped lang='scss'>
 .home {
   height: 100%;
-  &:deep(.el-header) {
+
+  :deep(.el-header) {
     background: #333333;
   }
 
-  &:deep(.el-container) {
+  :deep(.el-main) {
+    background: #f0f2f5;
+  }
+
+  :deep(.el-container) {
     height: 100%;
   }
 }

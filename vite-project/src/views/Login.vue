@@ -24,7 +24,7 @@
 
 <script lang='ts' setup>
 import { LoginFormData } from '@/types/login'
-import type { FormInstance } from 'element-plus'
+import { ElNotification, FormInstance } from 'element-plus'
 import { login } from '@/axios/api'
 const route = useRoute()
 const router = useRouter()
@@ -92,7 +92,7 @@ const resetForm = (formEl: FormInstance | undefined) => {
 }
 </script>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .login {
   width: 100%;
   height: 100%;
@@ -113,14 +113,14 @@ const resetForm = (formEl: FormInstance | undefined) => {
       margin-bottom: 30px;
     }
 
-    &:deep(.el-form-item) {
+    :deep(.el-form-item) {
       user-select: none
     }
 
     .login_btnItem {
       margin: 30px 0 0;
 
-      &:deep(.el-form-item__content) {
+      :deep(.el-form-item__content) {
         justify-content: center;
 
         .login_btn {
